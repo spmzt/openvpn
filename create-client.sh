@@ -1,8 +1,12 @@
 #!/bin/bash
 
 # First argument: Client identifier
+
+# Create Client Folder
+cd /etc/openvpn/client/
 mkdir /etc/openvpn/client/$1
-cd /etc/openvpn/client/$1
+cd $1
+
 KEY_DIR=/etc/openvpn/client/$1
 # OVPN Base File
 BASE_CONFIG=/etc/openvpn/client/base.conf
