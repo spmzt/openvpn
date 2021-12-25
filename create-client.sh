@@ -19,7 +19,7 @@ openssl ecparam -genkey -name secp521r1 -noout -out $1.key
 openssl pkey -pubout -in $1.key -out $1.crt
 
 # Create CSR
-openssl req -new -sha256 -key $1.key -nodes -out $1.csr
+openssl req -subj="/CN=$1.spmzt.net/O=SPMZT/OU=ICT/L=Tehran/ST=Tehran/C=IR/emailAddress=p.mousavizadeh@protonmail.com" -new -sha256 -key $1.key -nodes -out $1.csr
 
 # Setup PKI for easyrsa
 cp -r $EASY_RSA_DIR/pki ./
